@@ -1,0 +1,187 @@
+
+Texturas.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+tierra
+  rotate: false
+  xy: 1, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+tierraconcharcos
+  rotate: false
+  xy: 83, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+tierraflorecida
+  rotate: false
+  xy: 165, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+tierranevada
+  rotate: false
+  xy: 247, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+tierraseca
+  rotate: false
+  xy: 329, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+Base
+  rotate: false
+  xy: 1, 23
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+Copa
+  rotate: false
+  xy: 411, 105
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+Medio
+  rotate: false
+  xy: 1, 1
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+botonalmacen
+  rotate: false
+  xy: 53, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonAlmacenPulsado
+  rotate: false
+  xy: 411, 78
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonAlmacenSobre
+  rotate: false
+  xy: 80, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonComercio
+  rotate: false
+  xy: 411, 51
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonComercioPulsado
+  rotate: false
+  xy: 107, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonComercioSobre
+  rotate: false
+  xy: 134, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEjercito
+  rotate: false
+  xy: 161, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEjercitoPulsado
+  rotate: false
+  xy: 188, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEjercitoSobre
+  rotate: false
+  xy: 215, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEspionaje
+  rotate: false
+  xy: 242, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEspionajePulsado
+  rotate: false
+  xy: 269, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEspionajeSobre
+  rotate: false
+  xy: 296, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEventos
+  rotate: false
+  xy: 323, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEventosPulsado
+  rotate: false
+  xy: 350, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonEventosSobre
+  rotate: false
+  xy: 377, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonSocial
+  rotate: false
+  xy: 438, 78
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonSocialPulsado
+  rotate: false
+  xy: 438, 51
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+BotonSocialSobre
+  rotate: false
+  xy: 404, 18
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1

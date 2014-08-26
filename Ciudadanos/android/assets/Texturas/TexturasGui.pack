@@ -1,0 +1,66 @@
+
+TexturasGui.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+fondoevento
+  rotate: false
+  xy: 1, 152
+  size: 740, 540
+  orig: 740, 540
+  offset: 0, 0
+  index: -1
+EdificioAlmacen
+  rotate: false
+  xy: 1, 50
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+botonnopresionado
+  rotate: false
+  xy: 743, 672
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+botonpresionado
+  rotate: false
+  xy: 1, 28
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+botonsobre
+  rotate: false
+  xy: 103, 130
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+botonencima
+  rotate: false
+  xy: 743, 645
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+botonsinpresionar
+  rotate: false
+  xy: 1, 1
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+
+TexturasGui2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+fondomenualmacen
+  rotate: false
+  xy: 1, 1
+  size: 740, 540
+  orig: 740, 540
+  offset: 0, 0
+  index: -1
