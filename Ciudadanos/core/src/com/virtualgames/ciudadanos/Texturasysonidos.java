@@ -39,6 +39,8 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	public TorreGrafica torre;
 	//La tierra (Y el campo más adelante)
 	public TierraGrafica tierra;
+	//Las transiciones entre tierras
+	public Transiciones transiciones;
 	//Los botones del juego
 	public BotonesGrafica botones;
 	//Estilos y actores
@@ -49,6 +51,7 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	public void init(AssetManager assetmanager){
 		this.assetmanager = assetmanager;
 		assetmanager.setErrorListener(this);
+		
 		assetmanager.load(Constantes.TEXTURE_ATLAS, TextureAtlas.class);
 		assetmanager.load(Constantes.TEXTURE_ATLAS_GUI, TextureAtlas.class);
 		assetmanager.finishLoading();
@@ -66,6 +69,7 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	
 	fuentes = new Fuentes();
 	torre = new TorreGrafica(atlasdetodaslastexturas);
+	transiciones = new Transiciones(atlasdetodaslastexturas);
 	tierra = new TierraGrafica(atlasdetodaslastexturas);
 	botones = new BotonesGrafica(atlasdetodaslastexturas);
 	
@@ -210,12 +214,28 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 		public final AtlasRegion tierraconcharcos;
 		public final AtlasRegion tierranevada;
 		
+		
+		//Nuevo sistema de tierras
+		public final AtlasRegion tierramarron;
+		public final AtlasRegion desierto;
+		public final AtlasRegion pedregosa;
+		
+		
+		
+		
 		public TierraGrafica(TextureAtlas atlas){
 			tierrasinabonar = atlas.findRegion("tierra");
 			tierraflorecida = atlas.findRegion("tierraflorecida");
 			tierraseca = atlas.findRegion("tierraseca");
 			tierraconcharcos = atlas.findRegion("tierraconcharcos");
 			tierranevada = atlas.findRegion("tierranevada");
+			
+			//Nuevo sistema de tierras
+			tierramarron = atlas.findRegion("tierramarron");
+			desierto = atlas.findRegion("desierto");
+			pedregosa = atlas.findRegion("pedregosa");
+		
+			
 		}
 	}
 	public class BotonesGrafica{
@@ -261,5 +281,39 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 		
 	}
 	
+	public class Transiciones{
+		
+		public final AtlasRegion transhorizontaltd;
+		public final AtlasRegion transverticaltd;
+		public final AtlasRegion transhorizontaldt;
+		public final AtlasRegion transverticaldt;
+		public final AtlasRegion transhorizontaltp;
+		public final AtlasRegion transverticaltp;
+	    public final AtlasRegion transhorizontalpt;
+		public final AtlasRegion transverticalpt;
+		public final AtlasRegion transhorizontaldp;
+		public final AtlasRegion transverticaldp;
+		public final AtlasRegion transhorizontalpd;
+		public final AtlasRegion transverticalpd;
+		
+		public Transiciones(TextureAtlas atlas){
+		
+			transhorizontaltd = atlas.findRegion("transhorizontaltd");
+			transverticaltd = atlas.findRegion("transverticaltd");
+			transhorizontaldt = atlas.findRegion("transhorizontaldt");
+			transverticaldt = atlas.findRegion("transverticaldt");
+			transhorizontaltp = atlas.findRegion("transhorizontaltp");
+			transverticaltp = atlas.findRegion("transverticaltp");
+		    transhorizontalpt = atlas.findRegion("transhorizontalpt");
+			transverticalpt = atlas.findRegion("transverticalpt");
+			transhorizontaldp = atlas.findRegion("transhorizontaldp");
+			transverticaldp = atlas.findRegion("transverticaldp");
+			transhorizontalpd = atlas.findRegion("transhorizontalpd");
+			transverticalpd = atlas.findRegion("transverticalpd");
+			
+		}
+		
+	}
+};
+	
 
-}

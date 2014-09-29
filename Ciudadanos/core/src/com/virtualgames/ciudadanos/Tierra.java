@@ -12,6 +12,13 @@ private TextureRegion tierraseca;
 private TextureRegion tierraconcharcos;
 private TextureRegion tierranevada;
 private TextureRegion textura = null;
+
+//Nuevo sistema de texturas
+private TextureRegion tierramarron;
+private TextureRegion desierto;
+private TextureRegion pedregosa;
+
+
 private String estacion="primavera";
 
 		
@@ -26,17 +33,30 @@ private String estacion="primavera";
 			posicionY = -0.5f;
 			dimensionX = 1;
 			dimensionY = 1;
+			
+			
 			tierrasinabonar = Texturasysonidos.texturasysonidos.tierra.tierrasinabonar;
 			tierraflorecida = Texturasysonidos.texturasysonidos.tierra.tierraflorecida;
 			tierraseca = Texturasysonidos.texturasysonidos.tierra.tierraseca;
 			tierraconcharcos = Texturasysonidos.texturasysonidos.tierra.tierraconcharcos;
 			tierranevada = Texturasysonidos.texturasysonidos.tierra.tierranevada;
 			
+			
+			//Nuevo sistema de tierras
+			tierramarron = Texturasysonidos.texturasysonidos.tierra.tierramarron;
+			desierto = Texturasysonidos.texturasysonidos.tierra.desierto;
+			pedregosa = Texturasysonidos.texturasysonidos.tierra.pedregosa;
+			
+			
+			
+			
 			textura = tierraflorecida;
 		}
 		
 		
 		public void actualizarestacion(String estacion){
+			
+			/*
 			if(estacion!=this.estacion){
 				this.estacion=estacion;
 			};
@@ -51,8 +71,25 @@ private String estacion="primavera";
 		}
 		else if(estacion=="invierno"){
 			textura=tierranevada;			
-		}		
+		}	*/	
 		};
+		
+		public void establecertipodedetierra(int tipodetierra){
+			
+			if(tipodetierra==0){
+				//Tierra marrón
+				textura=tierramarron;
+			}
+			else if(tipodetierra==1){
+				//Desierto
+				textura=desierto;
+			}
+			else if(tipodetierra==2){
+				//Pedregal
+				textura=pedregosa;
+			}	
+		};
+		
 		
 		@Override
 		public void render(SpriteBatch batch) {

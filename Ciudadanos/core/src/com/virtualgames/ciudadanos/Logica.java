@@ -31,7 +31,6 @@ public class Logica extends InputAdapter implements InputProcessor{
 	
 	//Objetos
 	public Torre torre;
-    public Array <Tierra> tierras;
     
     //Interfaz
 	public Contenedorhud contenedorhud;
@@ -60,6 +59,10 @@ public class Logica extends InputAdapter implements InputProcessor{
 	//Los niveles
 	Nivel1 nivel1;
 	
+	//La creación del terreno va a depender de una nueva clase, el gestor de escenario
+	Gestordeescenario gestordeescenario;
+	
+	
 	public Logica(){
 		iniciarclase();
 		
@@ -68,20 +71,9 @@ public class Logica extends InputAdapter implements InputProcessor{
 	private void iniciarclase(){
 		
 		
-		//Creamos el objeto
 		//La torre	
 		torre = new Torre();
-		
-		//Las tierras
-		tierras = new Array<Tierra>();
-		for(int i=0;i<22;i++){
-		for(int j=0;j<8;j++){
-		Tierra tierra = new Tierra();
-		tierra.posicionX+=i*1.0f-10;
-		tierra.posicionY-=j*1.0f;
-		tierras.add(tierra);
-		};
-		
+				
 		//El contenedor hud
 		contenedorhud = new Contenedorhud();
 		
@@ -94,10 +86,14 @@ public class Logica extends InputAdapter implements InputProcessor{
 		registrodeopciones = new Registrodeopciones(registrodeavisos, contenedorhud.contenedordeactores);
 		registrodeeventos = new Registrodeeventos(registrodeopciones);
 		
-		
 		//El nivel (Todas las pruebas las haremos con el nivel 1, pero más adelante habrá que hacer una
 		//función que permita cambiarlo)
 		nivel1 = new Nivel1(registrodeeventos);
+		
+		//El gestor de escenario asociado al nivel, que va a crear todos los gráficos y cuya animación
+		//será actualizada desde lógica
+		gestordeescenario = new Gestordeescenario(nivel1);
+		
 		
 		//El generador de eventos
 		generadordeeventos = new Generadordeeventos(nivel1,contenedorhud.contenedordeactores);
@@ -105,9 +101,9 @@ public class Logica extends InputAdapter implements InputProcessor{
 		
 		//Añadir tanto la stage como la propia lógica al marco de eventos
 		Gdx.input.setInputProcessor(new InputMultiplexer(contenedorhud.contenedordeactores,this));
-		}	
-	};
 	
+	}	
+
 	public void actualizaralframerate(float delta){
 		
 		recogereventosdeteclado();
@@ -118,7 +114,7 @@ public class Logica extends InputAdapter implements InputProcessor{
 		//Provisional
 		actualizaralsegundo(delta);
 		actualizarestaciones();
-		actualizarcamposdecultivo();
+		actualizarescenario();
 		actualizarmenus(delta);
 		actualizargeneradordeeventos();
 		
@@ -219,12 +215,8 @@ public class Logica extends InputAdapter implements InputProcessor{
 		}
 	}
 	
-	public void actualizarcamposdecultivo(){
-		for(Tierra tierra:tierras){
-			if ((MathUtils.random(0, 30)==0)){
-			tierra.actualizarestacion(estacion);
-			}
-		};
+	public void actualizarescenario(){
+	
 	};
 	
 	

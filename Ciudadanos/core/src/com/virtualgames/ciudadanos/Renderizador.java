@@ -70,9 +70,13 @@ private void renderizarObjetos(){
 	//Objetos
 	batch.setProjectionMatrix(camara.combined);
 	batch.begin();	
-	for(Tierra tierra:logica.tierras){
+	for(Tierra tierra:logica.gestordeescenario.tierras){
 		tierra.render(batch);
 	};
+	for Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
+		transiciontierra.render(batch);
+	};
+	
 	logica.torre.render(batch);
 	batch.end();
 }
