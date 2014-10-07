@@ -283,14 +283,14 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	
 	public class Transiciones{
 		
-		public final AtlasRegion transhorizontaltd;
-		public final AtlasRegion transverticaltd;
-		public final AtlasRegion transhorizontaldt;
-		public final AtlasRegion transverticaldt;
-		public final AtlasRegion transhorizontaltp;
-		public final AtlasRegion transverticaltp;
-	    public final AtlasRegion transhorizontalpt;
-		public final AtlasRegion transverticalpt;
+		public final AtlasRegion transhorizontalmd;
+		public final AtlasRegion transverticalmd;
+		public final AtlasRegion transhorizontaldm;
+		public final AtlasRegion transverticaldm;
+		public final AtlasRegion transhorizontalmp;
+		public final AtlasRegion transverticalmp;
+	    public final AtlasRegion transhorizontalpm;
+		public final AtlasRegion transverticalpm;
 		public final AtlasRegion transhorizontaldp;
 		public final AtlasRegion transverticaldp;
 		public final AtlasRegion transhorizontalpd;
@@ -298,14 +298,14 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 		
 		public Transiciones(TextureAtlas atlas){
 		
-			transhorizontaltd = atlas.findRegion("transhorizontaltd");
-			transverticaltd = atlas.findRegion("transverticaltd");
-			transhorizontaldt = atlas.findRegion("transhorizontaldt");
-			transverticaldt = atlas.findRegion("transverticaldt");
-			transhorizontaltp = atlas.findRegion("transhorizontaltp");
-			transverticaltp = atlas.findRegion("transverticaltp");
-		    transhorizontalpt = atlas.findRegion("transhorizontalpt");
-			transverticalpt = atlas.findRegion("transverticalpt");
+			transhorizontalmd = atlas.findRegion("transhorizontalmd");
+			transverticalmd = atlas.findRegion("transverticalmd");
+			transhorizontaldm = atlas.findRegion("transhorizontaldm");
+			transverticaldm = atlas.findRegion("transverticaldm");
+			transhorizontalmp = atlas.findRegion("transhorizontalmp");
+			transverticalmp = atlas.findRegion("transverticalmp");
+		    transhorizontalpm = atlas.findRegion("transhorizontalpm");
+			transverticalpm = atlas.findRegion("transverticalpm");
 			transhorizontaldp = atlas.findRegion("transhorizontaldp");
 			transverticaldp = atlas.findRegion("transverticaldp");
 			transhorizontalpd = atlas.findRegion("transhorizontalpd");

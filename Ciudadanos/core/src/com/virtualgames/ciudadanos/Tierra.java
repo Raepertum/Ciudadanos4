@@ -21,6 +21,11 @@ private TextureRegion pedregosa;
 
 private String estacion="primavera";
 
+
+public int fila;
+public int columna;
+
+private int tipodetierra;
 		
 
 		
@@ -46,7 +51,6 @@ private String estacion="primavera";
 			tierramarron = Texturasysonidos.texturasysonidos.tierra.tierramarron;
 			desierto = Texturasysonidos.texturasysonidos.tierra.desierto;
 			pedregosa = Texturasysonidos.texturasysonidos.tierra.pedregosa;
-			
 			
 			
 			
@@ -76,6 +80,7 @@ private String estacion="primavera";
 		
 		public void establecertipodedetierra(int tipodetierra){
 			
+			this.tipodetierra = tipodetierra;
 			if(tipodetierra==0){
 				//Tierra marrón
 				textura=tierramarron;
@@ -89,6 +94,24 @@ private String estacion="primavera";
 				textura=pedregosa;
 			}	
 		};
+		
+		public int recuperartipodetierra(){
+			return tipodetierra;
+		}
+		
+		
+		public void asignarfila(int fila){
+			this.fila=fila;
+		}
+		public void asignarcolumna(int columna){
+			this.columna=columna;
+		}
+		public int recuperarfila(){
+			return this.fila;
+		}
+		public int recuperarcolumna(){
+			return this.columna;
+		}
 		
 		
 		@Override

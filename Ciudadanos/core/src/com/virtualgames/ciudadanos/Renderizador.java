@@ -73,7 +73,7 @@ private void renderizarObjetos(){
 	for(Tierra tierra:logica.gestordeescenario.tierras){
 		tierra.render(batch);
 	};
-	for Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
+	for (Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
 		transiciontierra.render(batch);
 	};
 	

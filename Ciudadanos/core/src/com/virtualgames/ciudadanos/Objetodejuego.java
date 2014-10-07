@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public abstract class Objetodejuego {
 	public float posicionX;
 	public float posicionY;
-	public int dimensionX;
-	public int dimensionY;
+	public float dimensionX;
+	public float dimensionY;
 	public int origenX;
 	public int origenY;
 	public int escalaX;

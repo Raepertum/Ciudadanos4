@@ -5,33 +5,23 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Transiciontierra extends Objetodejuego {
 
+private int tipodetransicion;
 
-private TextureRegion tierrasinabonar;
-
-private TextureRegion tierraflorecida;
-private TextureRegion tierraseca;
-private TextureRegion tierraconcharcos;
-private TextureRegion tierranevada;
 private TextureRegion textura = null;
-
-//Nuevo sistema de texturas
-private TextureRegion tierramarron;
-private TextureRegion desierto;
-private TextureRegion pedregosa;
 
 //Tipos de transicion
 
 //Tierra y desierto
-private TextureRegion transhorizontaltd;
-private TextureRegion transverticaltd;
-private TextureRegion transhorizontaldt;
-private TextureRegion transverticaldt;
+private TextureRegion transhorizontalmd;
+private TextureRegion transverticalmd;
+private TextureRegion transhorizontaldm;
+private TextureRegion transverticaldm;
 
 //Tierra y piedra
-private TextureRegion transhorizontaltp;
-private TextureRegion transverticaltp;
-private TextureRegion transhorizontalpt;
-private TextureRegion transverticalpt;
+private TextureRegion transhorizontalmp;
+private TextureRegion transverticalmp;
+private TextureRegion transhorizontalpm;
+private TextureRegion transverticalpm;
 
 //Desierto y piedra
 private TextureRegion transhorizontaldp;
@@ -40,9 +30,6 @@ private TextureRegion transhorizontalpd;
 private TextureRegion transverticalpd;
 
 
-private String estacion="primavera";
-
-		
 
 		
 		public Transiciontierra(){
@@ -51,65 +38,78 @@ private String estacion="primavera";
 		
 		
 		private void init(){
-			posicionX = -1f;
-			posicionY = -0.1f;
-			dimensionX = 1;
-			dimensionY = 1;
 			
-			transhorizontaltd = Texturasysonidos.texturasysonidos.transiciones.transhorizontaltd;
-			transverticaltd = Texturasysonidos.texturasysonidos.transiciones.transverticaltd;
-			transhorizontaldt = Texturasysonidos.texturasysonidos.transiciones.transhorizontaldt;
-			transverticaldt = Texturasysonidos.texturasysonidos.transiciones.transverticaldt;
+			
+			posicionX = 0f;
+			posicionY = 1f;
+			dimensionX = 1f;
+			dimensionY = 1f;
+			
+			
+/*0*/		transhorizontalmd = Texturasysonidos.texturasysonidos.transiciones.transhorizontalmd;
+/*1*/		transverticalmd = Texturasysonidos.texturasysonidos.transiciones.transverticalmd;
+/*2*/		transhorizontaldm = Texturasysonidos.texturasysonidos.transiciones.transhorizontaldm;
+/*3*/		transverticaldm = Texturasysonidos.texturasysonidos.transiciones.transverticaldm;
 
 			//Tierra y piedra
-			transhorizontaltp = Texturasysonidos.texturasysonidos.transiciones.transhorizontaltp;
-			transverticaltp = Texturasysonidos.texturasysonidos.transiciones.transverticaltp;
-			transhorizontalpt = Texturasysonidos.texturasysonidos.transiciones.transhorizontalpt;
-			transverticalpt = Texturasysonidos.texturasysonidos.transiciones.transverticalpt;
+/*4*/		transhorizontalmp = Texturasysonidos.texturasysonidos.transiciones.transhorizontalmp;
+/*5*/		transverticalmp = Texturasysonidos.texturasysonidos.transiciones.transverticalmp;
+/*6*/		transhorizontalpm = Texturasysonidos.texturasysonidos.transiciones.transhorizontalpm;
+/*7*/		transverticalpm = Texturasysonidos.texturasysonidos.transiciones.transverticalpm;
 
 			//Desierto y piedra
-			transhorizontaldp = Texturasysonidos.texturasysonidos.transiciones.transhorizontaldp;
-			transverticaldp = Texturasysonidos.texturasysonidos.transiciones.transverticaldp;
-			transhorizontalpd = Texturasysonidos.texturasysonidos.transiciones.transhorizontalpd;
-			transverticalpd = Texturasysonidos.texturasysonidos.transiciones.transverticalpd;
+/*8*/		transhorizontaldp = Texturasysonidos.texturasysonidos.transiciones.transhorizontaldp;
+/*9*/		transverticaldp = Texturasysonidos.texturasysonidos.transiciones.transverticaldp;
+/*10*/		transhorizontalpd = Texturasysonidos.texturasysonidos.transiciones.transhorizontalpd;
+/*11*/		transverticalpd = Texturasysonidos.texturasysonidos.transiciones.transverticalpd;
+			
+}
+		
+		public void establecertipodetransicion(int tipodetransicion){
+			this.tipodetransicion = tipodetransicion;
+			switch(tipodetransicion){
+			case 0: textura = transhorizontalmd;
+				break;
+			case 1: textura = transverticalmd;
+				break;
+			case 2: textura = transhorizontaldm;
+				break;
+			case 3: textura = transverticaldm;
+				break;
+			case 4: textura = transhorizontalmp;
+				break;
+			case 5: textura = transverticalmp;
+				break;
+			case 6: textura = transhorizontalpm;
+				break;
+			case 7: textura = transverticalpm;
+				break;
+			case 8: textura = transhorizontaldp;
+				break;
+			case 9: textura = transverticaldp;
+				break;
+			case 10: textura = transhorizontalpd;
+				break;
+			case 11: textura = transverticalpd;
+				break;
+			}
 			
 			
-			
-			
-			textura = tierraflorecida;
+		}
+		public int devolvertipodetransicion(){
+			return this.tipodetransicion;
 		}
 		
-		
-		public void actualizarestacion(String estacion){
-			
-		};
-		
-		public void establecertipodedetierra(int tipodetierra){
-			
-			if(tipodetierra==0){
-				//Tierra marrón
-				textura=tierramarron;
-			}
-			else if(tipodetierra==1){
-				//Desierto
-				textura=desierto;
-			}
-			else if(tipodetierra==2){
-				//Pedregal
-				textura=pedregosa;
-			}	
-		};
 		
 		
 		@Override
 		public void render(SpriteBatch batch) {
 		
-			//Habrá que cambiar esto más adelante, por ahora sólo renderizará una base
 			
-			//Dibujamos una base
 			batch.draw(textura.getTexture(),posicionX, posicionY-1.5f,origenX,origenY,dimensionX,dimensionY,
 					escalaX, escalaY,rotacion,textura.getRegionX(),textura.getRegionY(),
 					textura.getRegionWidth(),textura.getRegionHeight(),false,false);
+			
 			
 		}
 
