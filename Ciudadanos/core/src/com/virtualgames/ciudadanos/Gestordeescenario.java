@@ -6,12 +6,15 @@ import com.badlogic.gdx.utils.Array;
 public class Gestordeescenario {
 
 	Byte[] escenarioLayer1;
+	Boolean[] escenarioLayer2;
 	
 	//La array de tierras, necesaria para el renderizado
 	public Array <Tierra> tierras;
 	//La array de transición entre tierras, necesaria para suavizar los límites entre distintas
 	//texturas
 	public Array <Transiciontierra> transiciontierras;
+	//La array de aguas
+	public Array <Agua> aguas;
 	
 	//Número de columnas del mapa, es el primer valor de la array del escenario layer 1
 	int numerodecolumnasmapa;
@@ -34,6 +37,7 @@ public class Gestordeescenario {
 		
 		//Aquí vamos a tener la disposición del terreno (Mar, tierra, desierto...)
 		escenarioLayer1 = nivel1.devolverescenariolayer1();
+		escenarioLayer2 = nivel1.devolverescenariolayer2();
 		
 		//Necesitamos el número de columnas, que está almacenado como el último valor de la
 		//byte array del escenario
@@ -45,6 +49,7 @@ public class Gestordeescenario {
 		
 		tierras = new Array<Tierra>();
 		transiciontierras = new Array<Transiciontierra>();
+		aguas = new Array<Agua>();
 		
 		
 		//Ahora vamos a utilizar los valores contenidos en el primer layer para ir añadiendo 
@@ -100,6 +105,23 @@ public class Gestordeescenario {
 				
 			}
 		}
+		
+		//El tercer layer contiene el agua (Mares, lagos y ríos) y usa la array de aguas contenida en la clase del Nivel
+		
+		for (int i=0; i<escenarioLayer2.length-1;i++){
+			
+			
+			Agua agua = new Agua();
+			agua.establecertipodeagua(0);
+			agua.posicionX+=0;
+			agua.posicionY-=0f;
+			aguas.add(agua);
+			
+			
+		}
+		
+		
+		
 		}
 		
 		
@@ -180,8 +202,6 @@ public class Gestordeescenario {
 			transiciontierra.dimensionY=0.20f;
 			
 			transiciontierras.add(transiciontierra);
-			
-			System.out.println("Creada transicion vertical");
 			
 			transiciontierras.add(transiciontierra);
 			}

@@ -41,6 +41,8 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	public TierraGrafica tierra;
 	//Las transiciones entre tierras
 	public Transiciones transiciones;
+	//El agua
+	public AguaGrafica agua;
 	//Los botones del juego
 	public BotonesGrafica botones;
 	//Estilos y actores
@@ -71,6 +73,7 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 	torre = new TorreGrafica(atlasdetodaslastexturas);
 	transiciones = new Transiciones(atlasdetodaslastexturas);
 	tierra = new TierraGrafica(atlasdetodaslastexturas);
+	agua = new AguaGrafica(atlasdetodaslastexturas);
 	botones = new BotonesGrafica(atlasdetodaslastexturas);
 	
 	estilosyactores = new Estilosyactores();
@@ -310,6 +313,19 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 			transverticaldp = atlas.findRegion("transverticaldp");
 			transhorizontalpd = atlas.findRegion("transhorizontalpd");
 			transverticalpd = atlas.findRegion("transverticalpd");
+			
+		}
+		
+	}
+	
+public class AguaGrafica{
+		
+		public final AtlasRegion poza;
+		
+		
+		public AguaGrafica(TextureAtlas atlas){
+		
+			poza = atlas.findRegion("poza");			
 			
 		}
 		

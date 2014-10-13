@@ -76,8 +76,11 @@ private void renderizarObjetos(){
 	for (Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
 		transiciontierra.render(batch);
 	};
+	for (Agua agua:logica.gestordeescenario.aguas){
+		agua.render(batch);
+	}
 	
-	logica.torre.render(batch);
+	//logica.torre.render(batch);
 	batch.end();
 }
 

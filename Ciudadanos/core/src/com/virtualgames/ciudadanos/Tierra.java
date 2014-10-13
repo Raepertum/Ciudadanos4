@@ -119,7 +119,6 @@ private int tipodetierra;
 		
 			//Habrá que cambiar esto más adelante, por ahora sólo renderizará una base
 			
-			//Dibujamos una base
 			batch.draw(textura.getTexture(),posicionX, posicionY-1.5f,origenX,origenY,dimensionX,dimensionY,
 					escalaX, escalaY,rotacion,textura.getRegionX(),textura.getRegionY(),
 					textura.getRegionWidth(),textura.getRegionHeight(),false,false);
