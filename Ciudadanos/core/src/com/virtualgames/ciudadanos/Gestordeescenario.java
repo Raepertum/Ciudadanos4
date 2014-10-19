@@ -5,6 +5,9 @@ import com.badlogic.gdx.utils.Array;
 
 public class Gestordeescenario {
 
+	
+	
+	
 	Byte[] escenarioLayer1;
 	Boolean[] escenarioLayer2;
 	
@@ -12,7 +15,11 @@ public class Gestordeescenario {
 	public Array <Tierra> tierras;
 	//La array de transición entre tierras, necesaria para suavizar los límites entre distintas
 	//texturas
-	public Array <Transiciontierra> transiciontierras;
+	
+	//LAS TRANSICIONES ESTÁN EN SUSPENSO HASTA QUE SE IMPLANTE EL SISTEMA DE MÁSCARAS
+	
+	
+	//public Array <Transiciontierra> transiciontierras;
 	//La array de aguas
 	public Array <Agua> aguas;
 	
@@ -23,6 +30,8 @@ public class Gestordeescenario {
 	//número de columnas no nos da como resultado la cantidad de casillas de terreno que existen
 	//ya que el mapa puede estar "incompleto"
 	int numerodefilasmapa;
+	int numerodefilasmapaagua;
+	int numerodecolumnasmapaagua;
     
 	
 	
@@ -44,11 +53,17 @@ public class Gestordeescenario {
 	    numerodecolumnasmapa = escenarioLayer1[escenarioLayer1.length-1];
 	    //Calculamos el número de filas
 	    numerodefilasmapa = Math.abs((escenarioLayer1.length-2)/numerodecolumnasmapa)+1;
-		
+		//Cada cuadrado que contiene una tierra, contiene 3*3 valores de agua, así:
+	    numerodefilasmapaagua = numerodefilasmapa*3;
+	    numerodecolumnasmapaagua = numerodecolumnasmapa*5;
+	    
+	    
+	    
+	    
 		//Aquí vamos a poner las tierras y las "transiciones" entre terrenos
 		
 		tierras = new Array<Tierra>();
-		transiciontierras = new Array<Transiciontierra>();
+		//transiciontierras = new Array<Transiciontierra>();
 		aguas = new Array<Agua>();
 		
 		
@@ -60,7 +75,7 @@ public class Gestordeescenario {
 			    Tierra tierra = new Tierra();
 			    tierra.establecertipodedetierra(escenarioLayer1[i]);
 				tierra.posicionX+=i-numerodecolumnasmapa*Math.abs(i/numerodecolumnasmapa);
-				tierra.posicionY-=Math.abs(i/numerodecolumnasmapa)*1.0f;
+				tierra.posicionY+=Math.abs(i/numerodecolumnasmapa)*1.0f;
 				//Para poder crear las transiciones, almacenaremos en cada tierra el número de 
 				//fila y el número de mapa en que se encuentran
 				tierra.asignarfila(Math.abs(i/numerodecolumnasmapa));
@@ -111,18 +126,110 @@ public class Gestordeescenario {
 		for (int i=0; i<escenarioLayer2.length-1;i++){
 			
 			
+			//Ahora tenemos que analizar los elementos de la array de agua, para buscar patrones
+			//Primer patrón posible:
+			//Una poza sola	
+			
+			if(escenarioLayer2[i]==true){
 			Agua agua = new Agua();
-			agua.establecertipodeagua(0);
-			agua.posicionX+=0;
-			agua.posicionY-=0f;
+			
+			if(patronacuatico(i)==0){
+				agua.establecertipodeagua(0);
+			}
+			
+			else{
+			agua.establecertipodeagua(1);
+			}
+			
+			agua.posicionX+=(i-numerodecolumnasmapaagua*Math.abs(i/numerodecolumnasmapaagua))*0.20f;
+			agua.posicionY+=Math.abs(i/numerodecolumnasmapaagua)*0.20f;
 			aguas.add(agua);
 			
 			
+			}
+			
+			
+		}
+		
+		}
+	
+	public int patronacuatico(int i){
+		
+		int tipodeagua = 1;
+		
+		boolean aguaalaizquierda = false;
+		boolean aguaaladerecha = false;
+		boolean aguaarriba = false;
+		boolean aguaabajo = false;
+		boolean aguaarribaizquierda = false;
+		boolean aguaarribaderecha = false;
+		boolean aguaabajoizquierda = false;
+		boolean aguaabajoderecha = false;
+		
+		//La poza se define porque no hay agua a su izquierda, ni arriba, ni abajo, ni a su derecha
+		//Comprobamos las cuatro primeras
+		
+		
+		//Comprobación de agua a la izquierda
+		if(i-1<0){
+			aguaalaizquierda=false;
+		}
+		//Si está en otra fila tampoco cuenta
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=(Math.abs(i-1)/numerodecolumnasmapaagua)
+				||(escenarioLayer2[i-1]==false)){
+			aguaalaizquierda = false;
+		}
+		else{
+			aguaalaizquierda = true;
+		}
+		
+		
+		//Comprobación de agua a la derecha
+		if(i+1>escenarioLayer2.length-1){
+			aguaaladerecha=false;
+		}
+		//Si está en otra fila tampoco cuenta
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=(Math.abs(i+1)/numerodecolumnasmapaagua)
+				||(escenarioLayer2[i+1]==false)){
+			aguaaladerecha = false;
+		}
+		else{
+			aguaaladerecha = true;
+		}
+		
+		//Comprobación de agua arriba
+		if(i-numerodecolumnasmapaagua<0){
+			aguaarriba=false;
+		}
+		else if(escenarioLayer2[i-numerodecolumnasmapaagua]==false){
+			aguaarriba = false;
+		}
+		else{
+			aguaarriba = true;
+		}
+		
+		//Comprobación de agua abajo
+		if(i+numerodecolumnasmapaagua>escenarioLayer2.length-1){
+			aguaabajo=false;
+		}
+		else if(escenarioLayer2[i+numerodecolumnasmapaagua]==false){
+			aguaabajo = false;
+		}
+		else{
+			aguaabajo = true;
+		}
+		
+		//Si es una poza
+		if((aguaarriba==false)&&(aguaabajo==false)&&(aguaalaizquierda==false)&&(aguaaladerecha==false))
+		{
+			tipodeagua = 0;
 		}
 		
 		
 		
-		}
+		return tipodeagua;
+	}
+		
 		
 		
 		public void creartransicionhorizontal(int primeratierra, int segundatierra, int indiceprimeratierra){
@@ -161,7 +268,7 @@ public class Gestordeescenario {
 			
 			transiciontierra.dimensionX=0.20f;
 			
-			transiciontierras.add(transiciontierra);	
+			//transiciontierras.add(transiciontierra);	
 			}
 		}
 		public void creartransicionvertical(int primeratierra, int segundatierra, int indiceprimeratierra){
@@ -201,9 +308,9 @@ public class Gestordeescenario {
 			
 			transiciontierra.dimensionY=0.20f;
 			
-			transiciontierras.add(transiciontierra);
+			//transiciontierras.add(transiciontierra);
 			
-			transiciontierras.add(transiciontierra);
+			//transiciontierras.add(transiciontierra);
 			}
 		}
 		

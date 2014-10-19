@@ -106,7 +106,7 @@ private TextureRegion transverticalpd;
 		public void render(SpriteBatch batch) {
 		
 			
-			batch.draw(textura.getTexture(),posicionX, posicionY-1.5f,origenX,origenY,dimensionX,dimensionY,
+			batch.draw(textura.getTexture(),posicionX, posicionY,origenX,origenY,dimensionX,dimensionY,
 					escalaX, escalaY,rotacion,textura.getRegionX(),textura.getRegionY(),
 					textura.getRegionWidth(),textura.getRegionHeight(),false,false);
 			

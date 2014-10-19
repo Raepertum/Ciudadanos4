@@ -321,11 +321,13 @@ public class Texturasysonidos implements Disposable, AssetErrorListener{
 public class AguaGrafica{
 		
 		public final AtlasRegion poza;
+		public final AtlasRegion nopoza;
 		
 		
 		public AguaGrafica(TextureAtlas atlas){
 		
-			poza = atlas.findRegion("poza");			
+			poza = atlas.findRegion("poza");	
+			nopoza = atlas.findRegion("nopoza");
 			
 		}
 		

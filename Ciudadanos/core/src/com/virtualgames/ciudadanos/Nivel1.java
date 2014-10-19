@@ -27,7 +27,13 @@ public class Nivel1 {
 	
 	//Esta array tiene 32 valores + el número de columnas
 	escenarioLayer1 = new Byte[]
-			{0,1,2,0,2,0,0,1,2,0,0,1,2,0,1,2,0,1,2,0,1,2,0,0,0,0,0,0,0,0,0,0,8};
+			{0,1,2,0,2,0,0,1,2,0,0,1,2,0,1,2,0,1,2,0,1,2,0,0,0,0,0,0,0,0,0,0,
+			
+			0,0,0,0,0,0,0,0,
+			
+			0,0,0,0,0,0,0,0,
+			
+			8};
 	//Esta array ha de contener, entonces, 32*9= 288 valores (No se precisa el valor del número de columnas, ya que el gestor de escenario
 	//Lo recoge del número de columnas del escenario
 	escenarioLayer2 = new Boolean[]

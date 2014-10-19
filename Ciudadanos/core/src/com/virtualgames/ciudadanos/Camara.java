@@ -13,12 +13,7 @@ public class Camara extends OrthographicCamera {
 	double rozamiento=0.005;
 	double zoomcamara = 0.05f;
 	
-	public Camara(float anchodelvisor, float altodelvisor){
-		super(anchodelvisor,altodelvisor);
-	}
-	public void mandaralorigen(){
-		this.position.set(0,0,0);
-	};	
+	
 	public void acercarzoom(){
 		if(this.zoom+zoomcamara<1.40f){
 		this.zoom+=zoomcamara;

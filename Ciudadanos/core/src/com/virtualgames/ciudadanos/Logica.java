@@ -22,6 +22,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.badlogic.gdx.utils.UBJsonReader;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class Logica extends InputAdapter implements InputProcessor{
 	
@@ -231,6 +232,10 @@ public class Logica extends InputAdapter implements InputProcessor{
 	public boolean scrolled(int scroll){
 		zoomcamara=scroll;
 		return false;
+	}
+	
+	public void resize(Viewport viewport){
+		contenedorhud.contenedordeactores.setViewport(viewport);
 	}
 	
 

@@ -61,4 +61,5 @@ public class Contenedorhud {
 	public void act(float deltatime){
 		reloj.setText(""+horas+":"+minutos+":"+segundos);
 	}
+	
 }

@@ -11,19 +11,23 @@ public class Agua extends Objetodejuego {
 	
 	int tipodeagua;
 	private TextureRegion poza;
+	private TextureRegion nopoza;
 	
 	
 	public int fila;
 	public int columna;
 	public float dimensionX = 0.20f;
 	public float dimensionY = 0.20f;
-	public int posicionX=-(4/3);
-	public int posicionY=0;
+	public float posicionX=0f;
+	public float posicionY=0f;
 	
 	
 	public Agua(){
 		
 		poza = Texturasysonidos.texturasysonidos.agua.poza;
+		//Provisional
+		nopoza = Texturasysonidos.texturasysonidos.agua.nopoza;
+		
 		
 		
 	}
@@ -36,6 +40,11 @@ public class Agua extends Objetodejuego {
 			//Poza
 			textura=poza;
 		}
+		else if(tipodeagua==1){
+			//Provisional: No poza
+			textura=nopoza;
+		}
+		
 	};
 	
 	public int recuperartipodeagua(){

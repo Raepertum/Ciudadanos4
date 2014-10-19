@@ -3,13 +3,18 @@ package com.virtualgames.ciudadanos;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class Renderizador implements Disposable{
 	
 	private Camara camara;
 	private OrthographicCamera camaraparalagui;
+	private Viewport viewportgui;
+	private Viewport viewport;
 	private SpriteBatch batch;
-	private Logica logica;	
+	private Logica logica;
+	
 	
 public Renderizador(Logica logica){
 	this.logica = logica;
@@ -19,15 +24,11 @@ public Renderizador(Logica logica){
 
 private void iniciarclase(){
 	batch = new SpriteBatch();
-	camara = new Camara(Constantes.ANCHODELVISOR, Constantes.ALTODELVISOR);
-	camara.mandaralorigen();
-	camara.update();
-	
-	camaraparalagui = new OrthographicCamera(Constantes.ANCHODELVISORGUI, Constantes.ALTODELVISORGUI);
-	camaraparalagui.position.set(0,0,0);
-	camaraparalagui.setToOrtho(true);
-	camaraparalagui.update();
-	
+	camara = new Camara();
+	//camara.update();
+	camaraparalagui = new OrthographicCamera();
+	viewportgui = new FitViewport(Constantes.ANCHODELVISORGUI,Constantes.ALTODELVISORGUI,camaraparalagui);
+	viewport = new FitViewport(Constantes.ANCHODELVISOR,Constantes.ALTODELVISOR,camara);
 };
 	
 public void render(){
@@ -52,12 +53,15 @@ public void actualizarZoomCamara(){
 };
 
 public void resize(int width, int height){
-	camara.viewportWidth= (Constantes.ALTODELVISOR/height)*width;
-	camara.update();
-	camaraparalagui.viewportHeight = Constantes.ANCHODELVISORGUI;
-	camaraparalagui.viewportWidth = (Constantes.ALTODELVISORGUI/(float)height)*(float)width;
+	viewport.update(width, height);
+	viewportgui.update(width, height);
+	camara.position.x=viewport.getWorldWidth()/2;
+	camara.position.y=viewport.getWorldHeight()/2;
 	camaraparalagui.position.set(camaraparalagui.viewportWidth/2, camaraparalagui.viewportHeight/2, 0);
+	logica.resize(viewportgui);
+	camara.update();
 	camaraparalagui.update();
+	
 };
 
 @Override
@@ -73,9 +77,9 @@ private void renderizarObjetos(){
 	for(Tierra tierra:logica.gestordeescenario.tierras){
 		tierra.render(batch);
 	};
-	for (Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
+	/*for (Transiciontierra transiciontierra:logica.gestordeescenario.transiciontierras){
 		transiciontierra.render(batch);
-	};
+	};*/
 	for (Agua agua:logica.gestordeescenario.aguas){
 		agua.render(batch);
 	}

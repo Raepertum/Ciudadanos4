@@ -10,100 +10,107 @@ desierto
   orig: 80, 80
   offset: 0, 0
   index: -1
-pedregosa
+nopoza
   rotate: false
   xy: 83, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-poza
+pedregosa
   rotate: false
   xy: 165, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierra
+poza
   rotate: false
   xy: 247, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierraconcharcos
+tierra
   rotate: false
   xy: 329, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierraflorecida
+tierraconcharcos
   rotate: false
   xy: 411, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierramarron
+tierraflorecida
   rotate: false
   xy: 493, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierranevada
+tierramarron
   rotate: false
   xy: 575, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-tierraseca
+tierranevada
   rotate: false
   xy: 657, 45
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-transhorizontaldm
+tierraseca
   rotate: false
   xy: 739, 45
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+transhorizontaldm
+  rotate: false
+  xy: 821, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
   index: -1
 transhorizontaldp
   rotate: false
-  xy: 761, 45
+  xy: 843, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
   index: -1
 transhorizontalmd
   rotate: false
-  xy: 783, 45
+  xy: 865, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
   index: -1
 transhorizontalmp
   rotate: false
-  xy: 805, 45
+  xy: 887, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
   index: -1
 transhorizontalpd
   rotate: false
-  xy: 827, 45
+  xy: 909, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
   index: -1
 transhorizontalpm
   rotate: false
-  xy: 849, 45
+  xy: 931, 45
   size: 20, 80
   orig: 20, 80
   offset: 0, 0
@@ -117,35 +124,35 @@ transverticaldm
   index: -1
 transverticaldp
   rotate: false
-  xy: 871, 105
+  xy: 1, 1
   size: 80, 20
   orig: 80, 20
   offset: 0, 0
   index: -1
 transverticalmd
   rotate: false
-  xy: 1, 1
+  xy: 83, 23
   size: 80, 20
   orig: 80, 20
   offset: 0, 0
   index: -1
 transverticalmp
   rotate: false
-  xy: 83, 23
+  xy: 83, 1
   size: 80, 20
   orig: 80, 20
   offset: 0, 0
   index: -1
 transverticalpd
   rotate: false
-  xy: 871, 83
+  xy: 165, 23
   size: 80, 20
   orig: 80, 20
   offset: 0, 0
   index: -1
 transverticalpm
   rotate: false
-  xy: 83, 1
+  xy: 165, 1
   size: 80, 20
   orig: 80, 20
   offset: 0, 0
@@ -159,140 +166,140 @@ Base
   index: -1
 Copa
   rotate: false
-  xy: 165, 23
+  xy: 247, 23
   size: 50, 20
   orig: 50, 20
   offset: 0, 0
   index: -1
 Medio
   rotate: false
-  xy: 871, 61
+  xy: 953, 83
   size: 50, 20
   orig: 50, 20
   offset: 0, 0
   index: -1
 botonalmacen
   rotate: false
-  xy: 953, 78
+  xy: 953, 56
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonAlmacenPulsado
   rotate: false
-  xy: 980, 78
+  xy: 980, 56
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonAlmacenSobre
   rotate: false
-  xy: 217, 18
+  xy: 299, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonComercio
   rotate: false
-  xy: 244, 18
+  xy: 326, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonComercioPulsado
   rotate: false
-  xy: 271, 18
+  xy: 353, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonComercioSobre
   rotate: false
-  xy: 298, 18
+  xy: 380, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEjercito
   rotate: false
-  xy: 325, 18
+  xy: 407, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEjercitoPulsado
   rotate: false
-  xy: 352, 18
+  xy: 434, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEjercitoSobre
   rotate: false
-  xy: 379, 18
+  xy: 461, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEspionaje
   rotate: false
-  xy: 406, 18
+  xy: 488, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEspionajePulsado
   rotate: false
-  xy: 433, 18
+  xy: 515, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEspionajeSobre
   rotate: false
-  xy: 460, 18
+  xy: 542, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEventos
   rotate: false
-  xy: 487, 18
+  xy: 569, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEventosPulsado
   rotate: false
-  xy: 514, 18
+  xy: 596, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonEventosSobre
   rotate: false
-  xy: 541, 18
+  xy: 623, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonSocial
   rotate: false
-  xy: 568, 18
+  xy: 650, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonSocialPulsado
   rotate: false
-  xy: 595, 18
+  xy: 677, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0
   index: -1
 BotonSocialSobre
   rotate: false
-  xy: 622, 18
+  xy: 704, 18
   size: 25, 25
   orig: 25, 25
   offset: 0, 0

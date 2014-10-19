@@ -19,6 +19,7 @@ public abstract class Objetodejuego {
 		escalaX=1;
 		escalaY=1;
 		rotacion=0;
+		
 	}
 	
 	public void actualizar(float deltatime){};
