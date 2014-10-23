@@ -136,6 +136,9 @@ public class Gestordeescenario {
 			if(patronacuatico(i)==0){
 				agua.establecertipodeagua(0);
 			}
+			else if(patronacuatico(i)==2){
+				agua.establecertipodeagua(2);
+			}
 			
 			else{
 			agua.establecertipodeagua(1);
@@ -165,6 +168,7 @@ public class Gestordeescenario {
 		boolean aguaarribaderecha = false;
 		boolean aguaabajoizquierda = false;
 		boolean aguaabajoderecha = false;
+		
 		
 		//La poza se define porque no hay agua a su izquierda, ni arriba, ni abajo, ni a su derecha
 		//Comprobamos las cuatro primeras
@@ -219,16 +223,78 @@ public class Gestordeescenario {
 			aguaabajo = true;
 		}
 		
+		//Comprobación de agua abajo a la izquierda
+		if(i-numerodecolumnasmapaagua-1<0){
+			aguaabajoizquierda=false;
+		}
+		else if(escenarioLayer2[i-numerodecolumnasmapaagua-1]==false){
+			aguaabajoizquierda = false;
+		}
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=((Math.abs(i-numerodecolumnasmapaagua-1)/numerodecolumnasmapaagua)+1)){
+			aguaabajoizquierda = false;
+		}
+		else{
+			aguaabajoizquierda = true;
+		}
+		//Comprobación de agua abajo a la derecha
+		if(i-numerodecolumnasmapaagua+1<0){
+		    aguaabajoderecha = false;
+		}
+		else if(escenarioLayer2[i-numerodecolumnasmapaagua+1]==false){
+			aguaabajoderecha = false;
+				}
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=((Math.abs(i-numerodecolumnasmapaagua+1)/numerodecolumnasmapaagua)+1)){
+			aguaabajoderecha = false;
+				}
+		else{
+			aguaabajoderecha = true;
+				}
+		
+		//Comprobación de agua arriba a la izquierda
+		if(i+numerodecolumnasmapaagua-1>escenarioLayer2.length-1){
+			aguaarribaizquierda=false;
+				}
+		else if(escenarioLayer2[i+numerodecolumnasmapaagua-1]==false){
+			aguaarribaizquierda = false;
+				}
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=((Math.abs(i+numerodecolumnasmapaagua-1)/numerodecolumnasmapaagua)-1)){
+			aguaarribaizquierda = false;
+				}
+		else{
+			aguaarribaizquierda = true;
+				}
+				
+		//Comprobación de agua arriba a la derecha
+		if(i+numerodecolumnasmapaagua+1>escenarioLayer2.length-1){
+		    aguaarribaderecha=false;
+		  }
+		else if(escenarioLayer2[i+numerodecolumnasmapaagua+1]==false){
+			aguaarribaderecha = false;
+						}
+		else if(Math.abs(i/numerodecolumnasmapaagua)!=((Math.abs(i+numerodecolumnasmapaagua+1)/numerodecolumnasmapaagua)-1)){
+			aguaarribaderecha = false;
+		}
+		else{
+			aguaarribaderecha = true;
+		}
+		
+		
 		//Si es una poza
 		if((aguaarriba==false)&&(aguaabajo==false)&&(aguaalaizquierda==false)&&(aguaaladerecha==false))
 		{
 			tipodeagua = 0;
 		}
 		
-		
+	    if((aguaarriba==true)&&(aguaabajo==true)&&(aguaalaizquierda==true)&&(aguaaladerecha==true)){
+	    //Si es un cruce cuádruple
+	    if((aguaarribaizquierda==false)&&(aguaarribaderecha==false)&&(aguaabajoizquierda==false)&&(aguaabajoderecha==false)){
+	        tipodeagua = 2;
+	    }
+	    }
 		
 		return tipodeagua;
-	}
+	} 
+	
 		
 		
 		

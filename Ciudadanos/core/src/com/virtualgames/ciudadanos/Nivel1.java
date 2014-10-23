@@ -37,9 +37,9 @@ public class Nivel1 {
 	//Esta array ha de contener, entonces, 32*9= 288 valores (No se precisa el valor del número de columnas, ya que el gestor de escenario
 	//Lo recoge del número de columnas del escenario
 	escenarioLayer2 = new Boolean[]
-	{false, true, true, true, true, false, false, true, true, true, false, false, false, false, false, false, true, false, true, false,
+	{false, true, true, true, true, false, false, true, false, true, false, false, false, false, false, false, true, false, true, false,
 	true, false, true, false, false, false, false, false, false, true, false, false, false, false, true, true, false, false, true, 
-	true, false, false, false, false, false, false, true, true, true, true, true, false, false, false, false, false, true, false,
+	true, false, false, false, false, false, false, true, true, true, false, true, false, false, false, false, false, true, false,
 	false, true, true, true, true, false, false, true, true, true, false, false, false, false, false, false, true, false, true, false,
 	true, false, true, false, false, false, false, false, false, true, false, false, false, false, true, true, false, false, true, 
 	true, false, false, false, false, false, false, true, true, true, true, true, false, false, false, false, false, true, false,

@@ -12,6 +12,7 @@ public class Agua extends Objetodejuego {
 	int tipodeagua;
 	private TextureRegion poza;
 	private TextureRegion nopoza;
+	private TextureRegion cruceacuatro;
 	
 	
 	public int fila;
@@ -25,6 +26,8 @@ public class Agua extends Objetodejuego {
 	public Agua(){
 		
 		poza = Texturasysonidos.texturasysonidos.agua.poza;
+		cruceacuatro = Texturasysonidos.texturasysonidos.agua.cruceacuatro;
+		
 		//Provisional
 		nopoza = Texturasysonidos.texturasysonidos.agua.nopoza;
 		
@@ -43,6 +46,10 @@ public class Agua extends Objetodejuego {
 		else if(tipodeagua==1){
 			//Provisional: No poza
 			textura=nopoza;
+		}
+		else if(tipodeagua==2){
+			//Cruce a cuatro
+			textura=cruceacuatro;
 		}
 		
 	};

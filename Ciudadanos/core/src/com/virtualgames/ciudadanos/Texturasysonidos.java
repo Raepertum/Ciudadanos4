@@ -322,12 +322,14 @@ public class AguaGrafica{
 		
 		public final AtlasRegion poza;
 		public final AtlasRegion nopoza;
+		public final AtlasRegion cruceacuatro;
 		
 		
 		public AguaGrafica(TextureAtlas atlas){
 		
 			poza = atlas.findRegion("poza");	
 			nopoza = atlas.findRegion("nopoza");
+			cruceacuatro = atlas.findRegion("cruceacuatro");
 			
 		}
 		
